@@ -1,0 +1,43 @@
+<div ng-controller="WorkspaceController as ctrl">
+
+    <div class="top-right" style="display: block; padding: 10px;  height: auto">
+        <div class="toggle-body" style="margin-left: 15%">
+            <div class="toggle-btn" ng-click="ctrl.toggleButton()"></div>
+        </div>
+        <div class="status" style="margin-left: 30%; margin-top: 1.5%">
+            {{ctrl.isConnection ?  "You  are online and ready to go": "You are currently offline" }}
+        </div>
+    </div>
+
+    <div style="float: right;  margin-right: 3%"?>
+        <md-button ng-click="ctrl.showDevices()" class="md-raised md-primary"> SHOW DEVICES </md-button>
+    </div>
+    
+    <br><br><br> 
+    <md-content ng-if="ctrl.isDevicesShown">
+        <md-list style="width: 80%; margin-left: 10%">
+            <p>DEVICES AVAILABLE</p>
+            <md-list-item  ng-repeat="device in ctrl.devices" ng-click="null">
+                <p>{{device.id}}</p>
+                <div class="md-primary" ><md-checkbox ng-click="ctrl.onSelectDevice(device)" ></md-checkbox></div>
+
+                <md-divider></md-divider>
+            </md-list-item>
+
+
+        </md-list>
+    </md-content>
+
+    
+    
+
+    
+
+    <div class="footer">
+         <md-button class="md-fab md-primary" ng-disabled="ctrl.selectedDevices.count <= 0" title="Add devices to workspace" ng-click="ctrl.addDevices()">
+          <i class="material-icons">add</i>
+        </md-button>
+        <br>
+        <span style="text-align: center; !important">Your client ID is <strong> {{ctrl.isConnection ?  ctrl.selfPeerId : ""}} </strong></span>
+    </div>
+</div>

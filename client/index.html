@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+      <!-- Link to Scripts --->
+      
+      <script src="bower_components/angular/angular.min.js"> </script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+      <script src="bower_components/angular-material/angular-material.min.js"></script>
+      <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+      <script src="bower_components/peerjs/peer.min.js"></script>
+      <!--- --------------------------------------------------------------------- -->
+      
+      
+      
+      <!-- Link to Stylesheets --> 
+      
+      <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+      <link rel="stylesheet" href="bower_components/material-icons/iconfont/material-icons.css" type="text/css">
+      <link rel="stylesheet" href="../node_modules/typeface-montserrat/index.css" type="text/css">
+      <link rel="stylesheet" href="css/style.css" type="text/css">
+      <link rel="stylesheet" href="css/title.css" type="text/css">
+      <link rel="stylesheet" href="css/home.css" type="text/css">
+      
+      
+      
+      
+      
+    <title>Hello World!</title>
+  </head>
+  <body ng-app="p2p">
+      <div ng-include="'./views/title.html'" ></div>
+      <div ui-view>
+            
+        </div>
+      
+    <script>
+      // You can also require other files to run in this process
+      require('./js/renderer.js')
+    
+     
+    </script>
+      <script src="scripts/app.js" type="text/javascript"></script>
+      <script src="scripts/MainService.js" type="text/javascript"></script>
+      <script src="scripts/PeerService.js" type="text/javascript"></script>
+      
+      <script src="scripts/controllers/TitleBarController.js" type="text/javascript"></script>
+      <script src="scripts/controllers/HomeController.js" type="text/javascript"></script>
+      <script src="scripts/controllers/WorkspaceController.js" type="text/javascript"></script>
+  </body>
+</html>
